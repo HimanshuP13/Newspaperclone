@@ -1,21 +1,27 @@
 .btn-submit {
+    all: unset;
+  cursor: pointer;
+}
+.btn-submit {
+   
     padding: 10px 10px;
     margin-left: 10px;
     margin-bottom: 2rem;
-    border: 2px solid black;
-    border-radius: 50%;
-    color: Red;
-    font-size: 1rem;
-    background-color: lightyellow;
+    font-size: 2rem;
+    
 
 }
 
-
+.btn-submit:hover {
+    /* background-color: lightgreen; */
+    color:  whitesmoke;
+}
 .btn-submit :active {
     color: blue;
 }
 .btn-submit :visited {
-    color: Green;
+    
+    color: green;
 }
 
 .btn-read {
@@ -26,12 +32,10 @@
       padding: 20px 40px;
       color:Red;
       background-color: lightyellow;
+      
       font-size: 1rem;
 }
-.btn-submit:hover {
-    background-color: lightgreen;
-    color: blue;
-}
+
 .btn-read:hover {
     background-color: blueviolet;
     color: blue;
