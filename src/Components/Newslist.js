@@ -12,12 +12,9 @@ function Newslist() {
 
     const [isLoading,setLoading] = useState(false);
     const [query,setQuery] = useState('india');
-    const inputref = useRef(null);
-    
-    const url = `https://newsapi.org/v2/everything?q=${query}&sortBy=relevancy&language=en&apiKey=REMOVED`
-
-    
-
+    const inputref = useRef(null); 
+    const apikey = process.env.REACT_APP_API_KEY;
+    const url = `https://newsapi.org/v2/everything?q=${query}&sortBy=relevancy&language=en&apiKey=${apikey}`  
     
         async function fetchapi() {
 
