@@ -11,13 +11,12 @@ function Newslist() {
     const [darkMode,setDarkMode] = useState(false);
 
     const [isLoading,setLoading] = useState(false);
-    const [query,setQuery] = useState('Modi');
+    const [query,setQuery] = useState('india');
     const inputref = useRef(null);
-    const apikey = '5cc3b73718724e22b2dd51f0a6a860ed'
-    // const apikey = 'e9450501356f45f5a0bf447acc6f78fd'
-    // const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apikey}`
-    const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=5cc3b73718724e22b2dd51f0a6a860ed`
-    // const url = `https://api.worldnewsapi.com/search-news?api-key=${apikey}&text=${query}&language=en`
+    
+    const url = `https://newsapi.org/v2/everything?q=${query}&sortBy=relevancy&language=en&apiKey=5cc3b73718724e22b2dd51f0a6a860ed`
+
+    
 
     
         async function fetchapi() {
@@ -74,10 +73,7 @@ function Newslist() {
         setQuery(event.target.value);
         
     }
-    function handlesport(event) {
-        setQuery(event.target.value);
-        
-    }
+    
 
 
     // lightslategray pehle ka color
@@ -123,12 +119,12 @@ function Newslist() {
 
 
         <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',margin:'10px'}}>
-            <button className='btn-submit' value="India"  onClick={handle}> <b>India</b></button>
-            <button  className='btn-submit'value="Business"   onClick={handle}> <b>Business</b></button>
-            <button className='btn-submit'  value="Cricket"  onClick={handle}> <b>Sports</b></button>
-            <button  className='btn-submit' value="Technology"  onClick={handle}> <b>Tech</b></button>
-            <button  className='btn-submit' value="Politics"  onClick={handle}> <b>Politics</b></button>
-            <button  className='btn-submit' value="Entertainment"  onClick={handle}> <b>Entertainment</b></button>
+            <button className='btn-submit' value="india"  onClick={handle}> <b>India</b></button>
+            <button  className='btn-submit'value="business finance india"   onClick={handle}> <b>Business</b></button>
+            <button className='btn-submit'  value="sports cricket india"  onClick={handle}> <b>Sports</b></button>
+            <button  className='btn-submit' value="technology gadgets india"  onClick={handle}> <b>Tech</b></button>
+            <button  className='btn-submit' value="indian politics"  onClick={handle}> <b>Politics</b></button>
+            <button  className='btn-submit' value=" bollywood entertainment"  onClick={handle}> <b>Entertainment</b></button>
 
         </nav>
 
@@ -220,7 +216,7 @@ function Newslist() {
                 })      
             } */}
             {newslist && newslist.length > 0 ? (newslist.map((news) => (
-             <Newscard key={news.urlToImage} news={news} darkMode={darkMode} />))) : (
+             <Newscard key={news.url} news={news} darkMode={darkMode} />))) : (
               <h1 style={{textAlign:'center' ,paddingInline:'2rem'}}>No news available</h1>
                     )}
                     
