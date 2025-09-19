@@ -2,7 +2,7 @@ import React , { useState ,useEffect,useRef}  from 'react'
 import Newscard from './Newscard';
 import './news.css'
 import './Spinner.css'
-import {  FaAviato, FaGlobe, FaNewspaper, FaRegNewspaper, FaSearch } from "react-icons/fa";
+import {FaGlobe, FaNewspaper, FaRegNewspaper, FaSearch } from "react-icons/fa";
 
 function Newslist() {
     
@@ -21,7 +21,7 @@ function Newslist() {
           try {
             const response = await fetch(url);
             const jsondata = await response.json();
-            // console.log(jsondata.articles);
+           
             if(jsondata.articles) {
                setNewslist(jsondata.articles);
 
@@ -50,15 +50,11 @@ function Newslist() {
                 alert("Please type something to search");
                 return;
             } 
-            //     setQuery(inputcurr);
-            // alert("Submitted, Wait  for Second to Fetch Dta");
-
-            
-            setLoading(true);
+             setLoading(true);
              setQuery(inputcurr);
              setTimeout(() => {
-        setLoading(false); // Hide after API done
-    }, 2000); // Replace with actual fetch logic
+        setLoading(false); 
+    }, 2000); 
             
             
     }
@@ -71,20 +67,10 @@ function Newslist() {
         
     }
     
-
-
-    // lightslategray pehle ka color
-   
     
   return (
     <div style={{display :'grid' ,gridTemplateColumns:'auto',backgroundColor:darkMode ? '#333' : 'lightgrey',color: darkMode ? '#fff' : '#000',
     minHeight: '100vh'}}>
-        {/* <div style={{textAlign:'center',backgroundColor:'lightgrey',paddingTop:'20px',paddingBottom:'20px'}}> */}
-        {/* <h1><b>The GAlaxy Times <FaNewspaper/></b></h1> */}
-        {/* <h1><FaGlobe/> <FaRegNewspaper/></h1> */}
-        {/* </div> */}
-
-
         <div
   style={{
     textAlign: 'center',
