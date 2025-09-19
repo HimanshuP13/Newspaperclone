@@ -9,8 +9,8 @@
 
 ## Demo - screenshots
 
- ![Lightmode](screenshots/Lightmode.png)
- ![Darkmode](screenshots/Darkmode.png)
+ ![Lightmode](src/screenshots/Lightmode.png)
+ ![Darkmode](src/screenshots/Darkmode.png)
 
 
 ## Features
